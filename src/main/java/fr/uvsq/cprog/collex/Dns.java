@@ -30,4 +30,24 @@ public class Dns {
         }
     }
 
+    // Méthode pour chercher par NomMachine
+    public DnsItem getItem(NomMachine nom) {
+        for (DnsItem item : items) {
+            if (item.getNom().equals(nom)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    // Méthode pour chercher par AdresseIP
+    public DnsItem getItem(AdresseIP ip) {
+        for (DnsItem item : items) {
+            if (item.getIp().equals(ip)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
 }
