@@ -50,4 +50,22 @@ public class Dns {
         return null;
     }
 
+    public List<DnsItem> getItems(String domaine) {
+        List<DnsItem> result = new ArrayList<>();
+
+        // Normaliser le domaine
+        domaine = domaine.toLowerCase();
+
+        for (DnsItem item : items) {
+            String nomMachine = item.getNomMachine().getNom();
+
+            // Vérifie si le nom correspond au domaine
+            if (nomMachine.endsWith("." + domaine) || nomMachine.equals(domaine)) {
+                result.add(item);
+            }
+        }
+
+        return result;
+    }
+
 }
