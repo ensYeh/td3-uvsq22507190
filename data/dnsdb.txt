@@ -1,0 +1,10 @@
+pikachu.uvsq.fr 193.51.25.24
+serveur.uvsq.fr 193.51.31.45
+router.local 192.168.1.12
+nas.maison.fr 10.0.0.5
+smtp.uvsq.fr 193.51.31.200
+pop.uvsq.fr 193.51.31.210
+intranet.entreprise.com 172.16.0.15
+gateway.entreprise.com 172.16.0.22
+vpn.uvsq.fr 193.51.25.99
+proxy.uvsq.fr 193.51.25.77
