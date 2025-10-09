@@ -1,6 +1,6 @@
 package fr.uvsq.cprog.collex;
 
-public class AdresseIP {
+public class AdresseIP implements Comparable<AdresseIP> {
 
     private String ip;
 
@@ -53,5 +53,18 @@ public class AdresseIP {
     @Override
     public int hashCode() {
         return ip.hashCode();
+    }
+
+    @Override
+    public int compareTo(AdresseIP other) {
+        String[] a = this.ip.split("\\.");
+        String[] b = other.ip.split("\\.");
+        for (int i = 0; i < 4; i++) {
+            int n1 = Integer.parseInt(a[i]);
+            int n2 = Integer.parseInt(b[i]);
+            if (n1 != n2)
+                return Integer.compare(n1, n2);
+        }
+        return 0;
     }
 }
