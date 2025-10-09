@@ -25,4 +25,13 @@ public class DnsApp {
             }
         }
     }
+
+    public static void main(String[] args) {
+        try {
+            DnsApp app = new DnsApp();
+            app.run();
+        } catch (IOException e) {
+            System.err.println("Erreur lors du chargement du DNS : " + e.getMessage());
+        }
+    }
 }
