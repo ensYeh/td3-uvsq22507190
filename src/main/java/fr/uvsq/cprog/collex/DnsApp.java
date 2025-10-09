@@ -17,7 +17,7 @@ public class DnsApp {
     public void run() {
         System.out.println("=== Application DNS Interactive ===");
         while (true) {
-            Commande commande = tui.nextCommand(); // Récupère la prochaine commande utilisateur
+            Commande commande = tui.nextCommande(); // Récupère la prochaine commande utilisateur
             if (commande != null) {
                 commande.execute(); // Exécute la commande
             } else {

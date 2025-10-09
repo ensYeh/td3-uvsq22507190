@@ -14,10 +14,12 @@ public class CommandeAjoutItem implements Commande {
     @Override
     public void execute() {
         try {
-            dns.addItem(new AdresseIP(ip), new NomMachine(nom));
+            dns.addItem(new NomMachine(nom), new AdresseIP(ip));
             System.out.println("Item ajouté avec succès !");
         } catch (IllegalArgumentException e) {
             System.out.println("ERREUR : " + e.getMessage());
+        } catch (java.io.IOException e) {
+            System.out.println("ERREUR : Impossible d’écrire dans le fichier DNS (" + e.getMessage() + ")");
         }
     }
 }

@@ -36,7 +36,7 @@ public class Dns {
     // Méthode pour chercher par NomMachine
     public DnsItem getItem(NomMachine nom) {
         for (DnsItem item : items) {
-            if (item.getNom().equals(nom)) {
+            if (item.getNomMachine().equals(nom)) {
                 return item;
             }
         }
@@ -46,7 +46,7 @@ public class Dns {
     // Méthode pour chercher par AdresseIP
     public DnsItem getItem(AdresseIP ip) {
         for (DnsItem item : items) {
-            if (item.getIp().equals(ip)) {
+            if (item.getAdresseIP().equals(ip)) {
                 return item;
             }
         }
