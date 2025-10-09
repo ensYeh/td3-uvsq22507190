@@ -1,6 +1,6 @@
 package fr.uvsq.cprog.collex;
 
-public class NomMachine {
+public class NomMachine implements Comparable<NomMachine> {
 
     private String nom;
 
@@ -46,5 +46,12 @@ public class NomMachine {
     @Override
     public int hashCode() {
         return nom.hashCode();
+    }
+
+    @Override
+    public int compareTo(NomMachine other) {
+        // On utilise la méthode compareTo() de String pour comparer les noms de
+        // machines selon l’ordre alphabétique standard
+        return this.nom.compareTo(other.nom);
     }
 }

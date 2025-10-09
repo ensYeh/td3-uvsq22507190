@@ -57,6 +57,10 @@ public class AdresseIP implements Comparable<AdresseIP> {
 
     @Override
     public int compareTo(AdresseIP other) {
+        // On ne peut pas utiliser compareTo() de String car elle compare caractère par
+        // caractère, ce qui donne un ordre incorrect pour les valeurs numériques (ex :
+        // "90"<"100" renverrait faux car elle concidère que '9'>'1'), on compare donc
+        // chaque bloc numérique de l’adresse IP séparément
         String[] a = this.ip.split("\\.");
         String[] b = other.ip.split("\\.");
         for (int i = 0; i < 4; i++) {
