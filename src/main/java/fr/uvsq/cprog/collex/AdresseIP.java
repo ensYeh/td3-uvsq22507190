@@ -5,6 +5,10 @@ public class AdresseIP implements Comparable<AdresseIP> {
     private String ip;
 
     public AdresseIP(String ip) {
+        // Vérifie si l'adresse est null avant de créer l'objet
+        if (ip == null) {
+            throw new IllegalArgumentException("Adresse IP invalide : null");
+        }
         // Vérifie la validité de l'adresse IP avant de créer l'objet
         if (!isValid(ip)) {
             throw new IllegalArgumentException("Adresse IP invalide : " + ip);
@@ -24,6 +28,9 @@ public class AdresseIP implements Comparable<AdresseIP> {
 
     // Vérifie si l'adresse IP est valide
     public static boolean isValid(String ip) {
+        if (ip == null) {
+            return false;
+        }
         String[] parts = ip.split("\\.");
         if (parts.length != 4)
             return false;
