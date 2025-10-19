@@ -120,6 +120,32 @@
       </plugins>
     </pluginManagement>
     <plugins>
+    <!-- Plugin pour créer un Uber-JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <!-- Classe principale contenant le main() -->
+              <mainClass>fr.uvsq.cprog.collex.DnsApp</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -164,10 +190,10 @@
                     </rules>
                     <!-- Exclure la classe Main de la couverture JaCoCo car elle ne contient que des assert pour tests manuels et n'est pas testée via JUnit -->
                     <excludes>
-                      <exclude>fr\uvsq\cprog\collex\Commande*</exclude>
-                      <exclude>fr\uvsq\cprog\collex\CommandeQuitter*</exclude>
-                      <exclude>fr\uvsq\cprog\collex\DnsApp*</exclude>
-                      <exclude>fr\uvsq\cprog\collex\DnsItem*</exclude>
+                      <exclude>fr.uvsq.cprog.collex.Commande*</exclude>
+                      <exclude>fr.uvsq.cprog.collex.CommandeQuitter*</exclude>
+                      <exclude>fr.uvsq.cprog.collex.DnsApp*</exclude>
+                      <exclude>fr.uvsq.cprog.collex.DnsItem*</exclude>
                     </excludes>
                 </configuration>
             </execution>
