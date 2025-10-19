@@ -6,6 +6,11 @@ public class NomMachine implements Comparable<NomMachine> {
 
     public NomMachine(String nom) {
 
+        // Vérifie si le nom de la machine est null avant de créer l'objet
+        if (nom == null) {
+            throw new IllegalArgumentException("Nom de machine invalide : null");
+        }
+
         // Séparer par les points
         String[] parts = nom.split("\\.");
         if (parts.length < 2 || parts.length > 3) {

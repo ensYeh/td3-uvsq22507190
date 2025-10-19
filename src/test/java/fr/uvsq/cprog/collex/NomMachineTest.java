@@ -56,4 +56,10 @@ public class NomMachineTest {
         NomMachine nm = new NomMachine("Host.Domain");
         assertEquals("host.domain", nm.toString());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNomNull() {
+        new NomMachine(null);
+    }
+
 }
