@@ -12,6 +12,12 @@ public class DnsTUI {
         this.scanner = new Scanner(System.in);
     }
 
+    // Constructeur pour les tests unitaires
+    public DnsTUI(Dns dns, Scanner scanner) {
+        this.dns = dns;
+        this.scanner = scanner;
+    }
+
     // Lit une ligne saisie par l'utilisateur et retourne la commande correspondante
     public Commande nextCommande() {
         System.out.print("> ");
