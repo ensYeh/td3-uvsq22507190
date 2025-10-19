@@ -8,7 +8,7 @@ public class DnsApp {
     private DnsTUI tui;
 
     public DnsApp() throws IOException {
-        dns = new Dns(); // Initialise la base DNS à partir du fichier
+        dns = new Dns("config.properties"); // Initialise la base DNS à partir du fichier
         tui = new DnsTUI(dns); // Interface utilisateur textuelle
     }
 
