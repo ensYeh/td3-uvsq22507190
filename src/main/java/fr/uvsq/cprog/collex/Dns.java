@@ -8,14 +8,17 @@ public class Dns {
 
     private List<DnsItem> items = new ArrayList<>();
 
-    // Je garde le chemin du fichier afin de pouvoir le modifier plus tard
+    // Je garde le chemin du fichier de configuration ainsi que le chemin du fichier
+    // afin de pouvoir le modifier plus tard
     private String filePath;
+    private String configFilePath;
 
-    public Dns() throws IOException {
+    public Dns(String configFilePath) throws IOException {
+        this.configFilePath = configFilePath;
         // Charger le fichier de propriétés
         Properties props = new Properties();
-        props.load(new FileInputStream("config.properties"));
-        filePath = props.getProperty("dns.file");
+        props.load(new FileInputStream(configFilePath));
+        this.filePath = props.getProperty("dns.file");
 
         // Lire toutes les lignes du fichier
         List<String> lignes = Files.readAllLines(Paths.get(filePath));
